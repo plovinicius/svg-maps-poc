@@ -24,8 +24,21 @@ const getOptions = (selector, map) => {
             hover: { fill: '#34dc34' },
             selected: { fill: '#34dc34' }
         },
-        onRegionSelected: function (index, isSelected, selectedRegions) {
-            console.log(index, isSelected, selectedRegions);
+        // onRegionSelected: function (index, isSelected, selectedRegions) {
+        //     console.log(index, isSelected, selectedRegions);
+        // },
+        onRegionTooltipShow(event, tooltip, code) {
+            // Or you can disable tooltip for certain regions
+            if (code === 'RU') {
+                tooltip.hide()
+            } else {
+                // tooltip customize
+                tooltip.text(
+                    `<h5>${tooltip.text()} - Country</h5>` +
+                    `<p class="text-xs">This message is gonna appear when hovering over every single reion.</p>`,
+                    true // Enables HTML
+                )
+            }
         }
     }
 
