@@ -1,6 +1,7 @@
-import "./node_modules/jsvectormap/dist/js/jsvectormap.js";
-import "./node_modules/jsvectormap/dist/maps/us-aea-en.js";
-import "./node_modules/jsvectormap/dist/maps/canada.js";
+import './node_modules/jsvectormap/dist/js/jsvectormap.js'
+import "./node_modules/jsvectormap/dist/maps/world.js";
+import './maps/us-aea-en.js'
+import './maps/canada.js'
 
 console.log('init');
 
@@ -36,5 +37,6 @@ const getOptions = (selector, map) => {
 
 const maps = {
     us: new jsVectorMap(getOptions("#us", "us_aea_en")),
-    canada: new jsVectorMap(getOptions("#canada", "canada"))
+    canada: new jsVectorMap(getOptions("#canada", "canada")),
+    world: new jsVectorMap(getOptions("#world", "world"))
 }
